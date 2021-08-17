@@ -22,7 +22,7 @@ My macOS Setup | Longfei's Blog
 </title>
 <meta name=title content="My macOS Setup | Longfei's Blog">
 <link rel=stylesheet href=/css/main.min.css>
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/longfeis.me\/"},"articleSection":"posts","name":"My macOS Setup","headline":"My macOS Setup","description":"📝本文记录我的mac的设置，以及我常用的软件、工作环境等信息。 🆕调整新mac的系统设置 访达设置 将个人的home目录和dev目录加入左侧边栏 三","inLanguage":"zh-cn","author":"longfei","creator":"longfei","publisher":"longfei","accountablePerson":"longfei","copyrightHolder":"longfei","copyrightYear":"2021","datePublished":"2021-02-02 22:48:52 \u002b0800 \u002b0800","dateModified":"2021-02-02 22:48:52 \u002b0800 \u002b0800","url":"https:\/\/longfeis.me\/2021\/my-macos-setup\/","wordCount":"582","keywords":["macOS","Longfei\u0027s Blog"]}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/longfeis.me\/"},"articleSection":"posts","name":"My macOS Setup","headline":"My macOS Setup","description":"[TOC] 创建于：2021-02-02 更新时间：2021-08-17 📝因为使用黑苹果，因此经常需要重新安装系统。本文记录我的mac的设置，以及我常用","inLanguage":"zh-cn","author":"longfei","creator":"longfei","publisher":"longfei","accountablePerson":"longfei","copyrightHolder":"longfei","copyrightYear":"2021","datePublished":"2021-02-02 22:48:52 \u002b0800 \u002b0800","dateModified":"2021-02-02 22:48:52 \u002b0800 \u002b0800","url":"https:\/\/longfeis.me\/2021\/my-macos-setup\/","wordCount":"1186","keywords":["macOS","Longfei\u0027s Blog"]}</script>
 </head>
 <body>
 <div class=wrapper>
@@ -109,151 +109,224 @@ in
 <span class=post-category>
 <a href=https://longfeis.me/categories/mac/linux%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/> Mac/Linux杂七杂八, </a>
 </span>
-<span class=post-word-count>582 words</span>
+<span class=post-word-count>1186 words</span>
 </div>
 </header>
 <div class=post-content>
-<p>📝本文记录我的<code>mac</code>的设置，以及我常用的软件、工作环境等信息。</p>
-<h2 id=调整新mac的系统设置>🆕调整新<code>mac</code>的系统设置</h2>
-<h3 id=访达设置>访达设置</h3>
-<p>将个人的home目录和dev目录加入左侧边栏</p>
-<h3 id=三指拖移>三指拖移</h3>
+<p>[TOC]</p>
+<blockquote>
+<p>创建于：2021-02-02
+更新时间：2021-08-17</p>
+</blockquote>
+<p>📝因为使用黑苹果，因此经常需要重新安装系统。本文记录我的<code>mac</code>的设置，以及我常用的软件、工作环境等信息，以便能够更快地完成macOS的环境配置。</p>
+<h2 id=-调整新mac的系统设置>🆕 调整新<code>mac</code>的系统设置</h2>
+<ol>
+<li>
+<p>登陆apple id</p>
+</li>
+<li>
+<p>设置 &ndash;> 显示器 &ndash;> 更多空间</p>
+</li>
+<li>
 <p>系统偏好设置 -> 辅助功能 -> 指针控制 -> 触控板选项 -> 启用拖移（三指拖移）</p>
-<h3 id=launchpad图标大小调整><code>launchpad</code>图标大小调整</h3>
+</li>
+<li>
+<p>键盘，设置触控栏显示f1,f2等键</p>
+</li>
+<li>
+<p>配置访达，网格间距拉到最小，文字大小10，排序方式名称，分组方式种类。用作默认。</p>
+</li>
+<li>
+<p>将个人的home目录和dev目录加入左侧边栏</p>
+</li>
+<li>
+<p><code>launchpad</code>图标大小调整（可选）</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>defaults write com.apple.dock springboard-columns -int <span style=color:#ae81ff>16</span>
 defaults write com.apple.dock springboard-rows -int <span style=color:#ae81ff>10</span>
-defaults write com.apple.dock ResetLaunchPad -bool TRUE
+defaults write com.apple.dock ResetLaunchPad -bool TRUE <span style=color:#75715e># 将系统应用和用户应用分页</span>
 killall Dock
-</code></pre></div><h3 id=安装基础工具包>🔧安装基础工具包</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>xcode-select --install
-</code></pre></div><h2 id=科学上网>科学上网</h2>
+</code></pre></div></li>
+</ol>
+<h2 id=-科学上网>🪜 科学上网</h2>
 <p>macOS科学上网工具：<a href=https://github.com/yichengchen/clashX>clashX</a></p>
-<h2 id=包管理软件>包管理软件</h2>
-<h3 id=homebrewhttpsbrewshindex_zh-cn><a href=https://brew.sh/index_zh-cn>homebrew</a></h3>
+<h2 id=-安装基础工具包>🔧 安装基础工具包</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>xcode-select --install
+</code></pre></div><h2 id=-包管理软件>💼 包管理软件</h2>
+<p>macOS上一般使用第三方包管理软件，最常见的是：<a href=https://brew.sh/index_zh-cn>homebrew</a>，直接在命令行执行以下命令（需要🪜）：</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>/bin/bash -c <span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
-</code></pre></div><h2 id=安装常见软件>安装常见软件</h2>
+</code></pre></div><h2 id=-生成ssh-key>🌉 生成ssh key</h2>
+<p>主要是用于下载git项目。 执行以下命令，一路回车，密钥默认存放在<code>~/.ssh</code>目录下，以<code>.pub</code>结尾的便是公钥：</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ssh-keygen -t ed25519 -C <span style=color:#e6db74>&#34;mymbp@home&#34;</span>
+</code></pre></div><h2 id=-配置工作环境>📃 配置工作环境</h2>
+<p>我将平时经常使用的软件，命令行工具以及其配置维护在我个人的<a href=git@github.com:oops-lgtm/dotfiles.git>dotfiles</a>仓库中。可以参考<a href=https://github.com/oops-lgtm/dotfiles#install>Install</a>一节进行安装。</p>
+<p>在终端配置了代理的情况下，安装脚本会提示是否使用<code>Brewfile</code>来安装软件，一般在拿到新系统的时候，我都会选择<code>y</code>(es)。
+PS. 安装软件的过程时间较长，可以选择跳过，等到用的时候在进行安装。</p>
+<h3 id=常用软件>常用软件</h3>
+<p>👇下面这个表格汇总了一些我的mac上安装的软件（星号代表已经集成到了Brewfile中）：</p>
 <table>
 <thead>
 <tr>
-<th>软件</th>
-<th>说明</th>
-<th style=text-align:left>brew安装</th>
+<th style=text-align:left>软件</th>
+<th style=text-align:left>说明</th>
+<th style=text-align:left>官网</th>
+<th style=text-align:center>Brewfile</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>google-chrome</td>
-<td>谷歌浏览器</td>
-<td style=text-align:left>*</td>
+<td style=text-align:left>google-chrome</td>
+<td style=text-align:left>谷歌浏览器</td>
+<td style=text-align:left><a href=https://www.google.com/chrome/>https://www.google.com/chrome/</a></td>
+<td style=text-align:center></td>
 </tr>
 <tr>
-<td>typora</td>
-<td>所见即所得markdown编辑器</td>
-<td style=text-align:left>*</td>
+<td style=text-align:left>typora</td>
+<td style=text-align:left>所见即所得markdown编辑器</td>
+<td style=text-align:left><a href=https://typora.io/>https://typora.io/</a></td>
+<td style=text-align:center>*</td>
 </tr>
 <tr>
-<td>appcleaner</td>
-<td>软件卸载</td>
-<td style=text-align:left>*</td>
+<td style=text-align:left>appcleaner</td>
+<td style=text-align:left>软件卸载</td>
+<td style=text-align:left><a href=https://freemacsoft.net/appcleaner/>https://freemacsoft.net/appcleaner/</a></td>
+<td style=text-align:center>*</td>
 </tr>
 <tr>
-<td>iterm2</td>
-<td>terminal替代品</td>
-<td style=text-align:left>*</td>
+<td style=text-align:left>iterm2</td>
+<td style=text-align:left>terminal替代品</td>
+<td style=text-align:left><a href=https://iterm2.com/>https://iterm2.com/</a></td>
+<td style=text-align:center>*</td>
 </tr>
 <tr>
-<td>tmux</td>
-<td>terminal分屏</td>
-<td style=text-align:left>*</td>
+<td style=text-align:left>alacritty</td>
+<td style=text-align:left>terminal替代，据说性能好</td>
+<td style=text-align:left><a href=https://github.com/alacritty/alacritty>https://github.com/alacritty/alacritty</a></td>
+<td style=text-align:center>*</td>
 </tr>
 <tr>
-<td>Alfred4</td>
-<td>finder替代品</td>
-<td style=text-align:left>*</td>
+<td style=text-align:left>tmux</td>
+<td style=text-align:left>terminal分屏</td>
+<td style=text-align:left><a href=https://github.com/tmux/tmux/wiki>https://github.com/tmux/tmux/wiki</a></td>
+<td style=text-align:center>*</td>
 </tr>
 <tr>
-<td>visual-studio-code</td>
-<td>编辑器，maybe IDE</td>
-<td style=text-align:left>*</td>
+<td style=text-align:left>Alfred4</td>
+<td style=text-align:left>finder替代品</td>
+<td style=text-align:left><a href=https://www.alfredapp.com/>https://www.alfredapp.com/</a></td>
+<td style=text-align:center>*</td>
 </tr>
 <tr>
-<td>wechat</td>
-<td>微信</td>
+<td style=text-align:left>visual-studio-code</td>
+<td style=text-align:left>编辑器，maybe IDE</td>
+<td style=text-align:left><a href=https://code.visualstudio.com/>https://code.visualstudio.com/</a></td>
+<td style=text-align:center>*</td>
+</tr>
+<tr>
+<td style=text-align:left>wechat</td>
+<td style=text-align:left>微信</td>
 <td style=text-align:left><a href=https://weixin.qq.com/>https://weixin.qq.com/</a></td>
+<td style=text-align:center></td>
 </tr>
 <tr>
-<td>企业微信</td>
-<td>工作使用</td>
+<td style=text-align:left>企业微信</td>
+<td style=text-align:left>工作使用</td>
 <td style=text-align:left><a href=https://work.weixin.qq.com/>https://work.weixin.qq.com/</a></td>
+<td style=text-align:center></td>
 </tr>
 <tr>
-<td>WPS</td>
-<td>办公套件</td>
+<td style=text-align:left>WPS</td>
+<td style=text-align:left>办公套件</td>
 <td style=text-align:left><a href=https://mac.wps.cn/>https://mac.wps.cn/</a></td>
+<td style=text-align:center></td>
 </tr>
 <tr>
-<td>OneNote</td>
-<td>微软出品的笔记软件</td>
-<td style=text-align:left>App Store</td>
-</tr>
-<tr>
-<td>Skim</td>
-<td>PDF阅读器</td>
+<td style=text-align:left>Skim</td>
+<td style=text-align:left>PDF阅读器</td>
 <td style=text-align:left><a href=https://skim-app.sourceforge.io/>https://skim-app.sourceforge.io/</a></td>
+<td style=text-align:center></td>
 </tr>
 <tr>
-<td>Snipaste</td>
-<td>截图工具</td>
-<td style=text-align:left>*</td>
+<td style=text-align:left>Snipaste</td>
+<td style=text-align:left>截图工具</td>
+<td style=text-align:left><a href=https://www.snipaste.com/>https://www.snipaste.com/</a></td>
+<td style=text-align:center>*</td>
 </tr>
 <tr>
-<td>MacTex</td>
-<td>Latex编译器</td>
+<td style=text-align:left>MacTex</td>
+<td style=text-align:left>Latex编译器</td>
 <td style=text-align:left><a href=http://www.tug.org/mactex/>http://www.tug.org/mactex/</a></td>
+<td style=text-align:center></td>
 </tr>
 <tr>
-<td>texstudio</td>
-<td>Latex编辑器</td>
+<td style=text-align:left>texstudio</td>
+<td style=text-align:left>Latex编辑器</td>
 <td style=text-align:left><a href=https://www.texstudio.org/>https://www.texstudio.org/</a></td>
+<td style=text-align:center></td>
 </tr>
 <tr>
-<td>Zotero</td>
-<td>论文管理</td>
+<td style=text-align:left>Zotero</td>
+<td style=text-align:left>论文管理</td>
 <td style=text-align:left><a href=https://www.zotero.org/>https://www.zotero.org/</a></td>
+<td style=text-align:center>*</td>
 </tr>
 <tr>
-<td>Itsycal</td>
-<td>接管macOS日历</td>
+<td style=text-align:left>Itsycal</td>
+<td style=text-align:left>接管macOS日历</td>
 <td style=text-align:left><a href=https://www.mowglii.com/itsycal/>https://www.mowglii.com/itsycal/</a></td>
+<td style=text-align:center></td>
 </tr>
 <tr>
-<td>RunCat</td>
-<td>一个奔跑的小猫</td>
-<td style=text-align:left>App Store</td>
+<td style=text-align:left>RunCat</td>
+<td style=text-align:left>一个奔跑的小猫</td>
+<td style=text-align:left><a href=https://kyome.io/runcat/>https://kyome.io/runcat/</a></td>
+<td style=text-align:center>*</td>
 </tr>
 <tr>
-<td>网易云音乐</td>
-<td>听歌</td>
+<td style=text-align:left>网易云音乐</td>
+<td style=text-align:left>听歌</td>
 <td style=text-align:left><a href=https://music.163.com/#/download>https://music.163.com/#/download</a></td>
+<td style=text-align:center>*</td>
 </tr>
 <tr>
-<td>Notion</td>
-<td>笔记软件</td>
+<td style=text-align:left>OneNote</td>
+<td style=text-align:left>微软出品的笔记软件</td>
+<td style=text-align:left><a href=https://www.microsoft.com/zh-cn/microsoft-365/onenote/digital-note-taking-app>https://www.microsoft.com/zh-cn/microsoft-365/onenote/digital-note-taking-app</a></td>
+<td style=text-align:center>*</td>
+</tr>
+<tr>
+<td style=text-align:left>Notion</td>
+<td style=text-align:left>笔记软件</td>
 <td style=text-align:left><a href=https://www.notion.so/>https://www.notion.so/</a></td>
+<td style=text-align:center>*</td>
 </tr>
 <tr>
-<td>PicGo</td>
-<td>图床管理</td>
+<td style=text-align:left>logseq</td>
+<td style=text-align:left>双链笔记软件</td>
+<td style=text-align:left><a href=https://logseq.com/>https://logseq.com/</a></td>
+<td style=text-align:center>*</td>
+</tr>
+<tr>
+<td style=text-align:left>obsidian</td>
+<td style=text-align:left>知识库</td>
+<td style=text-align:left><a href=https://obsidian.md/>https://obsidian.md/</a></td>
+<td style=text-align:center>*</td>
+</tr>
+<tr>
+<td style=text-align:left>PicGo</td>
+<td style=text-align:left>图床管理</td>
 <td style=text-align:left><a href=https://molunerfinn.com/PicGo/>https://molunerfinn.com/PicGo/</a></td>
+<td style=text-align:center>*</td>
 </tr>
 <tr>
-<td>XMind</td>
-<td>思维导图工具</td>
+<td style=text-align:left>XMind</td>
+<td style=text-align:left>思维导图工具</td>
 <td style=text-align:left><a href=https://www.xmind.cn/>https://www.xmind.cn/</a></td>
+<td style=text-align:center></td>
 </tr>
 </tbody>
 </table>
-<h2 id=chrome插件>chrome插件</h2>
+<h3 id=chrome插件>chrome插件</h3>
+<p>chrome插件通过google账号同步。</p>
 <ol>
 <li>Google翻译：网页翻译工具</li>
 <li>SwitchyOmega：一个代理设置工具</li>
@@ -261,26 +334,36 @@ killall Dock
 <li>OneNote Web Clipper：OneNote的网页剪藏插件</li>
 <li>Zotero Connector：Zotero剪藏插件</li>
 </ol>
-<h2 id=配置开发环境>配置开发环境</h2>
-<h3 id=oh-my-zsh>oh-my-zsh</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sh -c <span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
-</code></pre></div><h3 id=生成ssh-key>生成ssh key</h3>
-<p>主要是用于下载git项目。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ssh-keygen -t ed25519 -C <span style=color:#e6db74>&#34;mymbp@home&#34;</span>
-</code></pre></div><h2 id=其他>其他</h2>
-<h2 id=总结>总结</h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>	google-chrome <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>	typora <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>	appcleaner <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>	iterm2 <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>	alfred <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>	visual-studio-code <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>	snipaste <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>	tmux <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>	go <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>	hugo 
-</code></pre></div><br>
+<h2 id=-字体>🀄️ 字体</h2>
+<p>字体对于程序员来说太重要了，好看的字体能够使人心情舒畅。</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>网址</th>
+<th>安装</th>
+<th style=text-align:center>Brewfile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fira code</td>
+<td><a href=https://github.com/tonsky/FiraCode>https://github.com/tonsky/FiraCode</a></td>
+<td>brew install &ndash;cask font-fira-code</td>
+<td style=text-align:center>*</td>
+</tr>
+<tr>
+<td>JetBrains Mono</td>
+<td><a href=https://www.jetbrains.com/lp/mono/>https://www.jetbrains.com/lp/mono/</a><br><a href=https://github.com/JetBrains/JetBrainsMono>https://github.com/JetBrains/JetBrainsMono</a></td>
+<td>brew install &ndash;cask font-jetbrains-mono</td>
+<td style=text-align:center></td>
+</tr>
+</tbody>
+</table>
+<h2 id=-总结>🎙️ 总结</h2>
+<p>以上就是我的<code>mac setup</code>的全过程，仅供参考。</p>
+<p>另外也可参考：https://sourabhbajaj.com/mac-setup/</p>
+<br>
 <center> ·End· </center>
 </div>
 <div class=post-copyright>
